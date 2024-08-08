@@ -1,0 +1,57 @@
+---
+title: "EDS212 Afternoon Day 4"
+author: "Rachel Swick"
+format: html
+---
+
+```{r}
+# load libraries ----
+library(GGally)
+library(skimr)
+library(palmerpenguins)
+library(tidyverse)
+
+# check out column names ----
+names(penguins)
+
+# look at the dimensions of the df ----
+dim(penguins)
+
+# get a summary of your df ----
+summary(penguins)
+
+# get a summary using {skimr} ----
+skimr::skim(penguins)
+
+# head and tail ----
+head(penguins, n = 10)
+tail(penguins)
+
+# pairsplot ----
+GGally::ggpairs(penguins, 
+                columns = 2:6, 
+                ggplot2::aes(color = species))
+
+# create a histogram of penguin flipper lengths ----
+ggplot(data = penguins, aes(x = flipper_length_mm, color = species))+
+  geom_histogram()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
